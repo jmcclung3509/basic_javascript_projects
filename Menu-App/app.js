@@ -88,15 +88,16 @@ const menu = [
     category: "dinner",
     sort: "4",
     price: 20.99,
-    img: "./images/Spaghetti-and-meatballs.jpeg",
+    img: "./images/spag-meatballs.jpg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 11,
-    title: "chicken parmesan",
+    title: "fish special",
     category: "dinner",
     sort: "4",
-    img: "./images/chicken-parmesan.jpeg",
+    price: 20.99,
+    img: "./images/salmon.jpg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
@@ -115,10 +116,10 @@ const dinnerBtn = document.getElementById("dinner")
 // const menuBtns = document.querySelectorAll(".menuBtn")
 
 
-  window.addEventListener ("DOMContentLoaded", function() {
-   showMenuItems(menu)
-  })
- 
+window.addEventListener("DOMContentLoaded", function () {
+  showMenuItems(menu)
+})
+
 
 
 function showMenuItems(food) {
@@ -126,8 +127,8 @@ function showMenuItems(food) {
     // console.log(item);
 
     return (
-      
-     ` <div class = "menu-item-wrapper" >
+
+      ` <div class = "menu-item-wrapper" >
            <figure>
                <img src=${item.img} alt = ${item.title}/>
            </figure>
@@ -143,41 +144,41 @@ function showMenuItems(food) {
        </div>
      </div>`
     )
-    })
-  
-
-    console.log(indivMenuItem)  
-
-    menuItemWrapper.innerHTML = indivMenuItem
-
- }
+  })
 
 
-breakfastBtn.addEventListener("click", function() {
-  const breakfast= menu.filter(menuItem => (menuItem.category === "breakfast")) 
+  console.log(indivMenuItem)
+
+  menuItemWrapper.innerHTML = indivMenuItem
+
+}
+
+
+breakfastBtn.addEventListener("click", function () {
+  const breakfast = menu.filter(menuItem => (menuItem.category === "breakfast"))
   // console.log(breakfast)
   showMenuItems(breakfast)
 })
 
-lunchBtn.addEventListener("click", function() {
-  const lunch= menu.filter(menuItem => (menuItem.category === "lunch")) 
+lunchBtn.addEventListener("click", function () {
+  const lunch = menu.filter(menuItem => (menuItem.category === "lunch"))
   showMenuItems(lunch)
 })
 
-shakeBtn.addEventListener("click", function() {
-  const shakes= menu.filter(menuItem => (menuItem.category === "shakes")) 
+shakeBtn.addEventListener("click", function () {
+  const shakes = menu.filter(menuItem => (menuItem.category === "shakes"))
   showMenuItems(shakes)
 })
 
-dinnerBtn.addEventListener("click", function() {
-  const dinner= menu.filter(menuItem => (menuItem.category === "dinner")) 
+dinnerBtn.addEventListener("click", function () {
+  const dinner = menu.filter(menuItem => (menuItem.category === "dinner"))
   showMenuItems(dinner)
 })
 
 
 
-allBtn.addEventListener("click", function() {
-  menu.sort((a,b ) => (a.sort > b.sort) ? 1: -1)
+allBtn.addEventListener("click", function () {
+  menu.sort((a, b) => (a.sort > b.sort) ? 1 : -1)
   showMenuItems(menu)
-  
+
 })
